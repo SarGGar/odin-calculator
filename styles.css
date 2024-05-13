@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 100px 0px;
+    gap: 5px;
+    background-color: rgb(210, 210, 210);
+    border-radius: 5px;
+    padding: 15px;
+}
+
+#display {
+    text-align: right;
+    background-color: rgba(51, 170, 51, .3);
+    padding: 10px 5px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+#row4 {
+    display: flex;
+    gap: 5px;
+}
+
+#left {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+button {
+    width: 60px;
+    height: 60px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#clear {
+    width: 190px;
+    height: 60px;
+}
+
+#plus {
+    width:60px;
+    height:125px;
+}
+
+.digit {
+    background-color: rgb(0, 35, 132, .2);
+}
