@@ -40,6 +40,7 @@ let number1DecimalFlag = false;
 let number2DecimalFlag = false;
 
 const clearedDisplayValue = "0.0"
+const divideZeroDisplayValue = "CUTIE ;)"
 
 
 buttonSelectors.addEventListener('click', (event) => {
@@ -54,7 +55,12 @@ buttonSelectors.addEventListener('click', (event) => {
 
     if (target.id == "equals") {
         console.log(`Operator:${operator}, Number1:${number1}, Number2:${number2}`)
-        if (number1!= null && operator!=null && number2==null) {
+        if (checkDivideZero(number1, number2, operator)){
+            updateDisplay(divideZeroDisplayValue)
+            number1 = null;
+            number2 = null;
+            operator = null;
+        } else if (number1!= null && operator!=null && number2==null) {
             number2 = number1;
             let resultValue = operate(Number(number1), Number(number2), operator);
             let resultDisplayValue = String(resultValue)
@@ -102,6 +108,15 @@ function checkDecimal(numberInput, number) {
     }
     return numberInput
 
+}
+
+function checkDivideZero(number1, number2, operator) {
+    if (operator=="divide") {
+        if (number2=="0" || (number2==null && number1=="0")) {
+            return true
+        }
+    }
+    return false
 }
 
 function updateNumbers(numberInput) {
